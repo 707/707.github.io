@@ -4,7 +4,7 @@ const robotsTxt = `
 User-agent: OAI-SearchBot 
 Disallow: /
 
-User-agent: ChatGPT-User
+User-agent: ChatGPT-User  
 Disallow: /
 
 User-agent: GPTBot
