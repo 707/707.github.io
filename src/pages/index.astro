@@ -39,9 +39,14 @@ const work = await Promise.all(
       <section>
         <article class="space-y-4">
           <p class="animate">
-            Based in London. Previously interned at Wayfair and recent postgrad from Kingston Uni. Built things at Meta and Uber.
+            Living in London. Previously interned at Wayfair and recent postgrad from Kingston Uni. Built things at Meta and Uber. 
           </p>
           <ul class="flex flex-wrap gap-1">
+          <li class="line-clamp-1">
+            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+              email
+            </Link>
+          </li>
           {SOCIALS.map(SOCIAL => (
             <li class="flex gap-x-1 text-nowrap">
               <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
@@ -50,11 +55,6 @@ const work = await Promise.all(
               {"|"}
             </li>
           ))}
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              email
-            </Link>
-          </li>
         </ul>
         </article>
       </section>
@@ -127,7 +127,7 @@ const work = await Promise.all(
 
       <section class="animate space-y-4">
         <h5 class="font-semibold text-black dark:text-white">
-          Let's Connect
+          <!-- Let's Connect -->
         </h5>
         <article>
           <p>
