@@ -42,11 +42,6 @@ const work = await Promise.all(
             Living in London. Previously interned at Wayfair and recent postgrad from Kingston Uni. Built things at Meta and Uber. 
           </p>
           <ul class="flex flex-wrap gap-1">
-          <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
-              email
-            </Link>
-          </li>
           {SOCIALS.map(SOCIAL => (
             <li class="flex gap-x-1 text-nowrap">
               <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
@@ -55,6 +50,11 @@ const work = await Promise.all(
               {"|"}
             </li>
           ))}
+          <li class="line-clamp-1">
+            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+              email
+            </Link>
+          </li>
         </ul>
         </article>
       </section>
