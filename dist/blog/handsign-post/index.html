@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon-light.svg"><meta name="generator" content="Astro v5.4.1"><!-- Font preloads --><link rel="preload" href="/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://707.github.io/blog/handsign-post/"><!-- Primary Meta Tags --><title>Handsign - an ASL Practice App | Nadeem S</title><meta name="title" content="Handsign - an ASL Practice App | Nadeem S"><meta name="description" content="Empathy to MVP"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://707.github.io/blog/handsign-post/"><meta property="og:title" content="Handsign - an ASL Practice App | Nadeem S"><meta property="og:description" content="Empathy to MVP"><meta property="og:image" content="https://707.github.io/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://707.github.io/blog/handsign-post/"><meta property="twitter:title" content="Handsign - an ASL Practice App | Nadeem S"><meta property="twitter:description" content="Empathy to MVP"><meta property="twitter:image" content="https://707.github.io/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.Cainpjm5.js"></script><script type="module">document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(o=>o.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.CZ5_CV75.css"></head> <body> <header> <div class="mx-auto max-w-screen-sm px-5">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold"> Nadeem S </div>  </a> <nav class="flex gap-1"> <a href="/blog" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> 
+blog
+ </a> <!--
+        <span>
+          {`/`}
+        </span>
+         
+        <Link href="/work">
+          work
+        </Link>
+        
+        <span>
+          {`/`}
+        </span>
+
+        <Link href="/projects">
+          projects
+        </Link>
+
+        --> </nav> </div>  </div> </header> <main>  <div class="mx-auto max-w-screen-sm px-5">  <div class="animate"> <a href="/blog" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm"> 
+Back to blog
+ </div> </a> </div> <div class="space-y-1 my-10"> <div class="animate flex items-center gap-1.5"> <div class="font-base text-sm"> <time datetime="2024-03-08T00:00:00.000Z"> Mar 8, 2024 </time> </div>
+&bull;
+<div class="font-base text-sm"> 8 min read </div> </div> <div class="animate text-2xl font-semibold text-black dark:text-white"> Handsign - an ASL Practice App </div> </div> <article class="animate"> <p>I built a web app to practice American Sign Language (ASL) alphabets in one week using a 10-year-old laptop. The app is live at <a href="https://handsign.pages.dev">handsign.pages.dev</a>.</p>
+<p>This isn’t a technical deep-dive but rather a summary of my experience turning a frustration into a focused MVP. It started, as all good products should, with empathy.</p>
+<h4 id="starting-with-a-real-problem">Starting with a real problem</h4>
+<p>The idea didn’t come from a brainstorming session; it came from a movie I recently watched called <a href="https://www.imdb.com/title/tt10366460/">CODA</a>. It was about a non-deaf daughter struggling to relate to her deaf family. Her challenge highlighted a fundamental barrier: learning ASL is hard, not because the resources don’t exist, but because the journey is full of friction.</p>
+<p>My goal became a statement of intent:</p>
+<blockquote>
+<p><strong>Make learning ASL more accessible.</strong></p>
+</blockquote>
+<h3 id="your-user-is-not-everyone">Your user is not everyone</h3>
+<p>At a first glance, the ecosystem around ASL is complex: instructors, learning platforms like Udemy, students, and even governments driving inclusion. To focus my effort, I prioritised stakeholders based on a set of criteria:</p>
+<ol>
+<li>
+<p><strong>Market Size:</strong> Where is the largest available audience?</p>
+</li>
+<li>
+<p><strong>User Need:</strong> Which segment is most underserved?</p>
+</li>
+<li>
+<p><strong>Growth Potential:</strong> What offers long-term viability? (I noted this as a corporate concern, but less so for my immediate goal).</p>
+</li>
+</ol>
+<p>After reviewing some publicly available research reports, the answer was obvious: <strong>students and learners.</strong> They represent the largest, most underserved market with the most acute need. This is who I would build for.</p>
+<p>I decided to reach out to some online ASL learning communities on discord and reddit and conducted open-ended interviews with different kinds of ASL learners (active, stalled, aspiring) to understand their learning barriers and identified three core problems:</p>
+<ol>
+<li><strong>Dialect Paralysis:</strong> Beginners don’t know which dialect to start with.</li>
+<li><strong>The Practice Gap:</strong> It’s hard to get real-time practice without being immersed in the deaf community.</li>
+<li><strong>Time Scarcity:</strong> Learners lack time for dedicated practice.</li>
+</ol>
+<p>To move forward, I had to prioritise again. I assessed these problems against criteria that matter: Is the problem real? How high is the customer impact? And does solving it align with my goal of making ASL more accessible?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><strong>Problem</strong></th><th><strong>Is this a real problem?</strong></th><th><strong>Impact to the customer</strong></th><th><strong>Does it tie to my goal?</strong></th></tr></thead><tbody><tr><td><strong>Not enough time</strong></td><td>M</td><td>M</td><td>H</td></tr><tr><td><strong>Can’t find someone to practice with</strong></td><td>H</td><td>H</td><td>H</td></tr><tr><td><strong>Don’t know which dialect to learn</strong></td><td>M</td><td>L</td><td>L</td></tr></tbody></table>
+<p>The problem was getting clear. <strong>The inability to practice and get real-time feedback was the most painful and acute problem.</strong></p>
+<p>The goal was further refined:</p>
+<blockquote>
+<p><strong>The core problem to solve is practicing ASL with real-time feedback.</strong></p>
+</blockquote>
+<h3 id="building-within-my-means">Building within my means</h3>
+<p>Wishes are ideas without constraints, and I had a few constraints:</p>
+<ul>
+<li>
+<p><strong>Time:</strong> I had just one week to build a MVP.</p>
+</li>
+<li>
+<p><strong>Cost:</strong> The only hardware I had was a 10-year-old laptop with 8GB of RAM. This meant any ML models had to be CPU-reliant, not GPU-dependent.</p>
+</li>
+<li>
+<p><strong>Effort:</strong> I am already familiar with web development and Machine Learning. I would have to leverage what I already knew.</p>
+</li>
+</ul>
+<p>With these constraints in mind, I evaluated three potential solutions supported with feedback from user surverys:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Solution</th><th align="left">Cost/Effort</th><th align="left">Directly impacts user problem</th><th align="left">Unique Value/Differentiator</th></tr></thead><tbody><tr><td align="left">Anki-style memorization system</td><td align="left">High</td><td align="left">Low</td><td align="left">Low</td></tr><tr><td align="left"><strong>Camera-based Sign Recognition App</strong></td><td align="left"><strong>High</strong></td><td align="left"><strong>Medium</strong></td><td align="left"><strong>High</strong></td></tr><tr><td align="left">Platform to connect learners with practitioners</td><td align="left">Low</td><td align="left">High</td><td align="left">Low</td></tr></tbody></table>
+<p>The hi-fi platform would have the highest impact, but the cost and effort were too high for an MVP. The lo-fi Anki system was low effort but failed to address the core problem of <em>practice and feedback</em>.</p>
+<h3 id="the-architecture-of-an-mvp">The architecture of an MVP</h3>
+<p>So I decided to build a computer vision app that runs entirely in the browser. This approach meant no downloads, no installations, and maximum accessibility. The ML model runs client-side, processing the video feed directly on the user’s device.</p>
+<p>We’ll get a bit technical now. The system architecture is composed of three core components:</p>
+<ol>
+<li><strong>Component #1: Gesture Capture</strong></li>
+</ol>
+<p>To capture hand movements via the webcam, I used a third-party react module to processes the webcam feed and output a JSON array representing the hand’s position. I confirmed it worked by testing the output data type and ensuring all dependencies loaded correctly.</p>
+<ol start="2">
+<li><strong>Component #2: Hand Detection</strong></li>
+</ol>
+<p>Interpreting the captured gestures and detecting ASL alphabet signs required comparing the incoming JSON data from the Gesture Capture module against a trained dataset of signs and ranks potential matches by a confidence score.
+The initial accuracy for a few alphabets was around 30%, which I improved by focusing the training data different poses of the same alphabet. I chose to optimize for accuracy over latency, as users have a higher tolerance for slight delays than for incorrect feedback.</p>
+<ol start="3">
+<li><strong>Component #3: Flashcard Component</strong></li>
+</ol>
+<p>Now to provide visual feedback to the user, this component takes the highest-confidence letter from the Hand Detection component, looks up the position of the hand joints, and draws a skeletal overlay and the corresponding letter on the screen. Fortunately, I found it performing adequately in low-light environments.</p>
+<h3 id="why-the-browser-is-the-best-first-bet">Why the browser is the best first bet</h3>
+<p>I deliberately chose to build a web app and not a native mobile app. My rationale is simple:</p>
+<ul>
+<li>
+<p><strong>Low Barrier to Entry:</strong> A web app is instantly accessible. There is nothing to download. This reduces friction and speeds up the feedback loop.</p>
+</li>
+<li>
+<p><strong>Zero Hosting Costs:</strong> Static file hosting on platforms like Cloudflare or Netlify is practically free.</p>
+</li>
+<li>
+<p><strong>Maximum Accessibility:</strong> It works on any device with a modern browser, from a laptop to a smartphone.</p>
+</li>
+</ul>
+<p>I ended up choosing this tech stack for speed and efficiency:</p>
+<ul>
+<li><strong>React.js</strong> for modular, extensible components, <strong>Tensorflow.js</strong> for client-side ML processing, <strong>Cloudflare</strong> for fast, cheap, and scalable static hosting.</li>
+</ul>
+<h3 id="an-mvp-knows-what-to-leave-out">An MVP knows what to leave out</h3>
+<p>A critical part of building an MVP is not just deciding what to build, but deciding what <em>not</em> to build. I explicitly left some things out:</p>
+<ul>
+<li><strong>No User Sign-ups:</strong> The primary goal is to validate the core mechanic. User accounts can come later.</li>
+<li><strong>No Fraud Protection:</strong> The app runs client-side and doesn’t store or record video, mitigating privacy risks from the start. For a public-facing service, I’d leverage a provider like Cloudflare for built-in CDN and privacy protection.</li>
+</ul>
+<h3 id="validation">Validation</h3>
+<p>The app, <a href="https://handsign.pages.dev">handsign.pages.dev</a>, is now live. It’s rough, but it works. I took the app back to the communities I first interviewed. The usability testing was invaluable. The app achieved roughly 70% accuracy for ASL alphabets, but the sessions revealed clear areas for improvement:</p>
+<ul>
+<li><strong>Improve 3D Sign Detection:</strong> The current model struggles with signs requiring wrist rotation (like ‘J’ or ‘Z’). The next step would be to explore a 3D model (like Tensorflow 3D), though this presents a challenge for CPU-only processing.</li>
+<li><strong>Refine the User Interface:</strong> The UI is functional but rough. A seamless overlay for the hand-tracking graph would improve the experience, especially on mobile where the current react video library is limited.</li>
+</ul>
+<h3 id="what-i-actually-learned">What I actually learned</h3>
+<p><img alt="Winning" width="929" height="837" loading="lazy" decoding="async" src="/_astro/winning.BqSD_0WA_Z1v51cX.webp" ></p>
+<p align="center"><i>Winning</i></p>
+<p>Honestly, I just wanted to build something that might help people learn ASL. I ended up with a rough app that works about 70% of the time. More importantly, I learned that asking “why this problem” and “why this solution” forces you to make better choices, even when you’re just messing around on weekends.</p>
+<p>The stuff that actually mattered:</p>
+<ul>
+<li><strong>Start with empathy, not tech.</strong> A real user problem is the only testable foundation.</li>
+<li><strong>Focus on the single most painful problem.</strong> Don’t try to solve everything at once.</li>
+<li><strong>Embrace your constraints.</strong> They are a feature, not a bug, that forces you to be creative.</li>
+<li><strong>Close the loop.</strong> Validating with real users is the only way to know if you’ve built something of value.</li>
+</ul> </article>  </div>  </main> <footer class="animate"> <div class="mx-auto max-w-screen-sm px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2024 | Nadeem S </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon-light.svg"><meta name="generator" content="Astro v5.4.1"><!-- Font preloads --><link rel="preload" href="/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://707.github.io/blog/marketing-ethics/"><!-- Primary Meta Tags --><title>Marketing Ethics | Nadeem S</title><meta name="title" content="Marketing Ethics | Nadeem S"><meta name="description" content="an excerpt"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://707.github.io/blog/marketing-ethics/"><meta property="og:title" content="Marketing Ethics | Nadeem S"><meta property="og:description" content="an excerpt"><meta property="og:image" content="https://707.github.io/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://707.github.io/blog/marketing-ethics/"><meta property="twitter:title" content="Marketing Ethics | Nadeem S"><meta property="twitter:description" content="an excerpt"><meta property="twitter:image" content="https://707.github.io/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.Cainpjm5.js"></script><script type="module">document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(o=>o.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.CZ5_CV75.css"></head> <body> <header> <div class="mx-auto max-w-screen-sm px-5">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold"> Nadeem S </div>  </a> <nav class="flex gap-1"> <a href="/blog" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> 
+blog
+ </a> <!--
+        <span>
+          {`/`}
+        </span>
+         
+        <Link href="/work">
+          work
+        </Link>
+        
+        <span>
+          {`/`}
+        </span>
+
+        <Link href="/projects">
+          projects
+        </Link>
+
+        --> </nav> </div>  </div> </header> <main>  <div class="mx-auto max-w-screen-sm px-5">  <div class="animate"> <a href="/blog" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm"> 
+Back to blog
+ </div> </a> </div> <div class="space-y-1 my-10"> <div class="animate flex items-center gap-1.5"> <div class="font-base text-sm"> <time datetime="2024-01-14T00:00:00.000Z"> Jan 14, 2024 </time> </div>
+&bull;
+<div class="font-base text-sm"> 5 min read </div> </div> <div class="animate text-2xl font-semibold text-black dark:text-white"> Marketing Ethics </div> </div> <article class="animate"> <p><em>This is an excerpt from my report on marketing ethics in the modern world. I’m fond of this because its a snapshot of what I learned from <a href="https://www.kingston.ac.uk/about/staff/dr-rahul-chawdhary">Dr Rahul Chawdhary</a> ‘s engaging marketing lectures during my postgraduate course at Kingston University. It’s nice to sometimes look back on memories of meaningful learning.</em></p>
+<p>Clarkson et al. (1995) has stated that society is currently at ‘a level of analysis that is both more inclusive, more ambiguous and further up the ladder of abstraction than a corporation itself’ which stresses the need for firms today to heavily consider the impact of their ethics messaging with respect to their product, services or organisation’s ethical framework. With the advent of social media, communities that were geographically isolated are now together with a startling pace of intensity of collaboration. This additionally signifies the need for firms to tactically maintain, constantly evolve and align their messaging with their target market’s crowd culture (Holt D, 2016), whose substantial influence and reach could lead to a critical juncture about a firm’s perception and its future of sales (Moreno J.E., 2023).</p>
+<p><strong>Unethical Marketing</strong></p>
+<p>We will briefly discuss the unethical marketing practice of exaggeration of claims by an energy drink brand called Prime, distributed internationally and manufactured by USA based Congo Brands. The Prime brand’s marketing strategy heavily employed the use of 13-25 age focused social media influencer marketing channels (Logan, 2022; Cohen A, 2022; Jacobs E, 2023) to entice young children into purchasing their product by claims of its rejuvenating electrolytic ingredients, when in reality, its caffeine content was often above the legal limit in several international markets and has been perceived as a risk to the development of children’s cognitive functions, with increasing likelihood of adverse health effects and risk behaviours (Mahe D, 2023; Hammond D, 2023). To summarise, this unethical approach utilises the lack of epistemic maturity in children and teenagers and actively undermines the development of their ability to make autonomous choices (Lopez F, 2021).</p>
+<p><strong>Ethical Marketing</strong></p>
+<p>One notable demonstration of ethical marketing is by a company called Too Good To Go (TGTG) which is a mobile app service that sells surplus unsold food from food retail stores and restaurants that would otherwise be discarded to customers in Europe and North America (TGTG a, 2023). Aspects of TGTG’s ethical marketing involve having a purpose-oriented approach towards the social impact its services offer, which is published in their yearly Impact Report that details their reduced their carbon footprint and global food waste (TGTG b, 2022). TGTG educates customers about the environmental benefits of their purchases, helping them make conscious purchase decisions which are in alignment with TGTG’s vision as a business. TGTG also continuously evolves the ethical principles for the food retail industry by actively lobbying for, sharing their expertise and developing regulations on food waste with governments. To summarise, TGTG’s international marketing strategy productively builds eco-conscious communities that contribute to a more sustainable food industry, otherwise known as a vocal green firm (Delmas, M.A. &#x26; Burbano, V.C., 2011).</p>
+<p><strong>References</strong></p>
+<p>1. Clarkson, Max B. E. (1995) ‘A Stakeholder Framework for Analyzing and Evaluating Corporate Social Performance’, Academy of Management Review, 20(1), pp. 92-117.</p>
+<p>2. Holt, D (2016) ‘Branding in the Age of Social Media’, Harvard Business Review. Available at: <a href="https://hbr.org/2016/03/branding-in-the-age-of-social-media">https://hbr.org/2016/03/branding-in-the-age-of-social-media</a> (Accessed: 25 October 2023).</p>
+<p>3. Moreno J.E. (2023) ‘Bud Light Is No Longer America’s Top-Selling Beer After Boycott’, The New York Times, 14 June. Available at: <a href="https://www.nytimes.com/2023/06/14/business/bud-light-lgbtq-backlash.html">https://www.nytimes.com/2023/06/14/business/bud-light-lgbtq-backlash.html</a>(Accessed: 25 October 2023).</p>
+<p>4. Cohen, A. (2023) ‘After $250M in Retail Sales, Prime Hydration Looks to Youth Sports’, Front Office Sports. Available at: <a href="https://frontofficesports.com/logan-paul-ksi-prime-hydration-youth-sports/">https://frontofficesports.com/logan-paul-ksi-prime-hydration-youth-sports/</a> (Accessed 17 Apr. 2023).</p>
+<p>5. ‌Logan (2023) ‘PRIME HYDRATION SUPERBOWL COMMERCIAL! 12 February. Available at: <a href="https://www.youtube.com/watch?v=OTHaTUzAM9k">https://www.youtube.com/watch?v=OTHaTUzAM9k</a>. </p>
+<p>6. ‌Jacobs, E (2023) ‘The playground Prime craze is a lesson in modern marketing’, The Financial Times. Available at: <a href="https://www.ft.com/content/4e9c33f2-deeb-4dbe-a296-3cf44bb2c5de">https://www.ft.com/content/4e9c33f2-deeb-4dbe-a296-3cf44bb2c5de</a> (Accessed: 25 October 2023).</p>
+<p>7. Mahe, D (2023) ‘Prime energy drink sold by KSI and Logan Paul banned from Australian schools’, ABC NEWS, 28 March. Available at: <a href="https://www.abc.net.au/news/2023-03-29/prime-logan-paul-ksi-drink-australian-schools-ban/102154550">https://www.abc.net.au/news/2023-03-29/prime-logan-paul-ksi-drink-australian-schools-ban/102154550</a> (Accessed: 25 October 2023)</p>
+<p>8. Hammond, D (2018) ‘Exposure and perceptions of marketing for caffeinated energy drinks among young Canadians’, Public Health Nutr, 21(3): 535–542. Available at: <a href="https://doi.org/10.1017%2FS1368980017002890">https://doi.org/10.1017%2FS1368980017002890</a></p>
+<p>9. Lopez, F (2021) ‘‘“Fueling up” Gamers. The Ethics of Marketing Energy Drinks to Gamers’, Neuroethics, 14, pp. 239-249. Available at: <a href="https://dx.doi.org/10.1007/s12152-020-09442-8."></a><a href="https://dx.doi.org/10.1007/s12152-020-09442-8">https://dx.doi.org/10.1007/s12152-020-09442-8</a></p>
+<p>10. TGTG a (2023) Home Page. Available at: <a href="https://www.toogoodtogo.com/">https://www.toogoodtogo.com/</a> (Accessed: 25 October 2023).</p>
+<p>11. TGTG b (2022) Impact Report 2022 [Press release]. Available at: <a href="https://www.toogoodtogo.com/en-gb/download/2022-impact-report">https://www.toogoodtogo.com/en-gb/download/2022-impact-report</a> (Accessed: 25 October 2023).</p>
+<p>12. Delmas, M.A. &#x26; Burbano, V.C. (2011) ‘The Drivers of Greenwashing’, California management review, 54(1), 64–87. Available at: <a href="https://doi.org/10.1525/cmr.2011.54.1.64">https://doi.org/10.1525/cmr.2011.54.1.64</a></p>
+<p>13. Federal Trade Commision (2016) ‘FTC Charges Volkswagen Deceived Consumers with Its “Clean Diesel” Campaign’, 29 March [Press release]. Available at: <a href="https://www.ftc.gov/news-events/news/press-releases/2016/03/ftc-charges-volkswagen-deceived-consumers-its-clean-diesel-campaign">https://www.ftc.gov/news-events/news/press-releases/2016/03/ftc-charges-volkswagen-deceived-consumers-its-clean-diesel-campaign</a> (Accessed: 25 October 2023).</p>
+<p>14. Ongwesa Jr, E (2019) ‘This Case Will Decide If Uber’s Surge Pricing Is Illegal’, Vice, 23 September. Available at: <a href="https://www.vice.com/en/article/d3adbv/this-case-will-decide-if-ubers-surge-pricing-is-illegal">https://www.vice.com/en/article/d3adbv/this-case-will-decide-if-ubers-surge-pricing-is-illegal</a>(Accessed: 25 October 2023).</p> </article>  </div>  </main> <footer class="animate"> <div class="mx-auto max-w-screen-sm px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2024 | Nadeem S </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon-light.svg"><meta name="generator" content="Astro v5.4.1"><!-- Font preloads --><link rel="preload" href="/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://707.github.io/blog/chingu-setup/"><!-- Primary Meta Tags --><title>From Strangers to a Shipping Team in Six Weeks | Nadeem S</title><meta name="title" content="From Strangers to a Shipping Team in Six Weeks | Nadeem S"><meta name="description" content="Finding a rhythm to development with Chingu"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://707.github.io/blog/chingu-setup/"><meta property="og:title" content="From Strangers to a Shipping Team in Six Weeks | Nadeem S"><meta property="og:description" content="Finding a rhythm to development with Chingu"><meta property="og:image" content="https://707.github.io/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://707.github.io/blog/chingu-setup/"><meta property="twitter:title" content="From Strangers to a Shipping Team in Six Weeks | Nadeem S"><meta property="twitter:description" content="Finding a rhythm to development with Chingu"><meta property="twitter:image" content="https://707.github.io/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.Cainpjm5.js"></script><script type="module">document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(o=>o.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.CZ5_CV75.css"></head> <body> <header> <div class="mx-auto max-w-screen-sm px-5">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold"> Nadeem S </div>  </a> <nav class="flex gap-1"> <a href="/blog" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> 
+blog
+ </a> <!--
+        <span>
+          {`/`}
+        </span>
+         
+        <Link href="/work">
+          work
+        </Link>
+        
+        <span>
+          {`/`}
+        </span>
+
+        <Link href="/projects">
+          projects
+        </Link>
+
+        --> </nav> </div>  </div> </header> <main>  <div class="mx-auto max-w-screen-sm px-5">  <div class="animate"> <a href="/blog" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm"> 
+Back to blog
+ </div> </a> </div> <div class="space-y-1 my-10"> <div class="animate flex items-center gap-1.5"> <div class="font-base text-sm"> <time datetime="2025-07-13T23:00:00.000Z"> Jul 14, 2025 </time> </div>
+&bull;
+<div class="font-base text-sm"> 6 min read </div> </div> <div class="animate text-2xl font-semibold text-black dark:text-white"> From Strangers to a Shipping Team in Six Weeks </div> </div> <article class="animate"> <p>This week marked the end of my sixth Chingu Voyage. For those unfamiliar, <a href="https://www.chingu.io/">Chingu</a> is a unique remote organisation that brings together teams of strangers to build a project over six weeks. Each “voyage” is broken into week long sprints. I always participate as a Product Manager and I remain a huge supporter of the program. Unlike other expensive courses or programs, Chingu has a very low barrier to entry for aspiring developers, data scientists, PMs and designers to gain real-world team experience, whether that’s building social skills, finding people to pair program with, etc.</p>
+<p>For me, it’s a place to experiment with approaches to building software with a team that’s free from the usual corporate red tape. It’s also an opportunity for me to give back and absorb best practices from other professional PMs, all for free! For this post, I won’t get into the weeds of how I did product discovery, etc. Instead, I wanted to write down what worked best for me in setting up these volunteer teams up for success, as the factors here are different from mature tech teams - where processes already exist.</p>
+<h4 id="the-first-week">The First Week</h4>
+<p>The first week is all about getting to know each other and laying the groundwork. I always start by setting up an introductory meeting where we can introduce ourselves, understand our individual motivations, and discuss our commitments and preferred time zones. This is also where we begin the conversation about what we’d like to build over the next six weeks.</p>
+<p>While Chingu provides example product ideas, I always encourage the team to build something new that aligns more closely with our personal goals. I’ve met developers who want to try out a new tech stack, UX designers eager to research a particular problem space, and PMs like myself wanting to try a new methods for managing work streams and building strong teams. To decide, we run a simple voting exercise to land on an idea we’re all excited about.</p>
+<p>Once we have a direction, we establish a Working Agreement. This isn’t an overbearing contract, but rather a simple document outlining our expectations for how we’ll communicate, make decisions, and run our meetings. It’s a rough guide to how we want to work with each other.</p>
+<p><img alt="alt text" width="1222" height="746" loading="lazy" decoding="async" src="/_astro/image-4.CMQwE3fO_ZYIlHX.webp" ></p>
+<h4 id="kicking-off-the-work">Kicking off the work</h4>
+<p>With the basics in place, three work streams begin almost simultaneously. As the Product Manager, I start developing the product vision and goals. I work closely with the UX designer to begin researching the problem space, identifying user needs through generative research, and brainstorming potential solutions.</p>
+<p>At the same time, the development team begins evaluating and setting up a tech stack and CI/CD workflows. We share our initial solution ideas with them early on, so they can start thinking through the technical architecture and any challenges we might face. This parallel process is crucial for moving quickly.</p>
+<p><img alt="alt text" width="2095" height="1908" loading="lazy" decoding="async" src="/_astro/image-1.2WYaLWRV_LhdPx.webp" ></p>
+<p align="center"><i>Prioritise, refine, repeat. </i></p>
+<p>By the end of the first week, we have a good idea of what problem we’re trying to solve and why. I then develop the first set of user stories that define the core MVP. I often use a framework like MoSCoW or a prioritisation method the team is comfortable with, sometimes using a Miro board to visualise my thought process. These stories are then shared with the development team for their input on the technical approach.</p>
+<p>Simultaneously, the UX designer shares low-fidelity wireframes for feedback on both the user experience and technical feasibility. Once we’re aligned, the designer creates high-fidelity mockups for the first few core user stories, getting us ready to hit the ground running on Monday.</p>
+<p><img alt="alt text" width="1492" height="858" loading="lazy" decoding="async" src="/_astro/Screenshot%202025-09-21%20at%206.44.09%E2%80%AFPM.npRViurA_1lLzEY.webp" ></p>
+<p align="center"><i>hi-fi mockup of an error flow </i></p>
+<h4 id="finding-a-rhythm">Finding a rhythm</h4>
+<p>Come Monday of week two, the team is ready to start building. We kick off with a planning meeting where I teach the team how to estimate the sprint tasks for the week. While many teams were comfortable with story points, I’m always inclined to make sure everyone is on the same page about how we estimate work going forward and document it. After planning, team members are free to assign themselves tasks from the project board I’ve set up.</p>
+<p><img alt="alt text" width="2394" height="902" loading="lazy" decoding="async" src="/_astro/image-2.BM8BOaQb_ZTTybX.webp" ></p>
+<p align="center"><i>The github project board I set up.</i></p>
+<p>Throughout the week, I hold one or two refinement sessions to clarify upcoming user stories and ensure they are ready for the next sprint. This is also my time to identify new features that would improve the user experience and get them into the backlog. At the end of the week, we hold a short review and retrospective to demo our work, share what went well, what went wrong, and what we could improve.</p>
+<p>To keep everyone on the same page, I aim to maintain a light Product Requirements Document (PRD) and create supporting artifacts like user personas and user flows as needed.</p>
+<p><img alt="alt text" width="1924" height="934" loading="lazy" decoding="async" src="/_astro/image-3.BkizVYlB_TvM8.webp" ></p>
+<p align="center"><i>retros!</i></p>
+<h4 id="why-keep-doing-this">Why keep doing this?</h4>
+<p>My goal as a PM during every voyage is to experiment and learn. We only have six weeks to build an MVP, so we want to minimise process overhead and help people to collaborate as effectively as possible. It’s important to always ask questions and learn as much as I can from the developers, UX researchers, and designers on the journey. It’s about discovering what works for them and adapting on the go.</p>
+<p>In the end, it’s an incredibly enjoyable process. It’s a refreshing break from work to just get together with a motivated group of people, rally around an idea, and support each other in achieving our goals.</p> </article>  </div>  </main> <footer class="animate"> <div class="mx-auto max-w-screen-sm px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2024 | Nadeem S </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>
