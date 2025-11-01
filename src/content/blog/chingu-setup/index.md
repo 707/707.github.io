@@ -1,58 +1,67 @@
 ---
-title: "From Strangers to a Shipping Team in Six Weeks"
-description: "Finding a rhythm to development with Chingu"
+title: "From Strangers to Shippers"
+description: "A Product Manager's Guide to Chingu Sprints"
 date: "July 14 2025"
 ---
 
-This week marked the end of my sixth Chingu Voyage. For those unfamiliar, [Chingu](https://www.chingu.io/) is a unique remote organisation that brings together teams of strangers to build a project over six weeks. Each "voyage" is broken into week long sprints. I always participate as a Product Manager and I remain a huge supporter of the program. Unlike other expensive courses or programs, Chingu has a very low barrier to entry for aspiring developers, data scientists, PMs and designers to gain real-world team experience, whether that’s building social skills, finding people to pair program with, etc.
 
-For me, it’s a place to experiment with approaches to building software with a team that's free from the usual corporate red tape. It’s also an opportunity for me to give back and absorb best practices from other professional PMs, all for free! For this post, I won't get into the weeds of how I did product discovery, etc. Instead, I wanted to write down what worked best for me in setting up these volunteer teams up for success, as the factors here are different from mature tech teams - where processes already exist.
+> You can find my team’s [project documentation here](https://github.com/chingu-voyages/V57-tier3-team-32/releases/tag/v1.0.0). Feel free to use it as a reference for future voyages/projects.
 
-#### The First Week
+How do you take a bunch of strangers, scattered across the globe and turn them into a high-functioning team in just six weeks? This is the fundamental challenge of a [Chingu](https://www.chingu.io/) voyage, a 6 sprint 6 week spanning software development marathon. As a Product Manager who just completed my sixth voyage there, I've often rediscovered that success in this fast-paced, volunteer-driven environment isn't about rigid processes. It's about creating clarity, fostering ownership, and building momentum. I wanted to write this post to serve as a retrospective for myself and as a possible point of reference for those who are thinking about joining the next Chingu voyage.
 
-The first week is all about getting to know each other and laying the groundwork. I always start by setting up an introductory meeting where we can introduce ourselves, understand our individual motivations, and discuss our commitments and preferred time zones. This is also where we begin the conversation about what we’d like to build over the next six weeks.
+Over several voyages, I've refined an approach that hinges on a few core principles:
 
-While Chingu provides example product ideas, I always encourage the team to build something new that aligns more closely with our personal goals. I've met developers who want to try out a new tech stack, UX designers eager to research a particular problem space, and PMs like myself wanting to try a new methods for managing work streams and building strong teams. To decide, we run a simple voting exercise to land on an idea we’re all excited about.
+    Clarity Over Control: My role is to ensure everyone understands the 'why' and the 'what' so they can own the 'how'.
 
-Once we have a direction, we establish a Working Agreement. This isn’t an overbearing contract, but rather a simple document outlining our expectations for how we’ll communicate, make decisions, and run our meetings. It’s a rough guide to how we want to work with each other.
+    Co-Create, Don't Dictate: Artifacts like a Working Agreement, the product idea, and the sprint plan are all built with the team, not for them. This is shared ownership.
+
+    Momentum is the Goal: In a six week project, the biggest risk is stagnation. Our process must aim to be lightweight, remove blockers, and celebrate weekly progress to keep energy high.
+
+If that sounds too cookie cutter to you, here’s how I put these principles into practice.
+
+#### Week 1: From strangers to a team
+
+The first week is dedicated to transforming a group of individuals into a cohesive unit. Before we even discuss what to build, we focus on how we’ll work together. I schedule a kickoff meeting with a clear goal: to build psychological safety. We go beyond simple introductions to discuss our personal motivations for joining, what we hope to learn, and our real world constraints like time commitments and time zones.
+
+While Chingu provides example projects, I’ve found that teams are most motivated when they build something that aligns with their personal goals. We run a dot-voting exercise on a digital whiteboard to brainstorm and quickly gauge enthusiasm for different ideas. A brief discussion on the top voted concepts, focused on what's realistically achievable in six weeks, helps us land on a direction we’re all excited about.
+
+From there, we cocreate a Working Agreement. This isn't a rigid contract but a living document that answers critical questions upfront: "What's our primary chat tool?", "How do we signal when we're blocked?", "What is our process for merging code?". This simple alignment prevents most communication issues down the road.
 
 ![alt text](image-4.png)
 
-#### Kicking off the work
+#### Building the engine: From idea to an actionable plan
 
-With the basics in place, three work streams begin almost simultaneously. As the Product Manager, I start developing the product vision and goals. I work closely with the UX designer to begin researching the problem space, identifying user needs through generative research, and brainstorming potential solutions.
+With our team foundations in place, we kick off three parallel workstreams with tight feedback loops. My first task as a PM is to draft a simple Product Brief. This one page document clarifies the product vision, the problem we're solving, our target users, and our success metrics. It becomes our north star.
 
-At the same time, the development team begins evaluating and setting up a tech stack and CI/CD workflows. We share our initial solution ideas with them early on, so they can start thinking through the technical architecture and any challenges we might face. This parallel process is crucial for moving quickly.
+Working closely with our UX designer, we begin initial discovery, including light competitive analysis, generative user research and a survey blast to potential users to validate our core assumptions. Simultaneously, the development team evaluates tech stacks and sets up their CI/CD pipeline. We bring them into the conversation immediately, sharing our initial solution hypotheses and user needs. This early collaboration is crucial; it ensures the technical architecture is built to support the desired user experience from day one.
 
 ![alt text](image-1.png)
-<p align=center><i>Prioritise, refine, repeat. </i></p>
+<p align=center><I>How can the team get better at agreeing on what to build?</i></p>
 
-By the end of the first week, we have a good idea of what problem we're trying to solve and why. I then develop the first set of user stories that define the core MVP. I often use a framework like MoSCoW or a prioritisation method the team is comfortable with, sometimes using a Miro board to visualise my thought process. These stories are then shared with the development team for their input on the technical approach.
+By the end of the first week, we had a validated problem statement. I translated our goals into a set of prioritised user stories for the MVP, often using the MoSCoW method to distinguish our “must haves" from our “nice to haves." At the same time, the UX designer delivered high-fidelity mockups for the core user flows. We review these as a team to ensure alignment and technical feasibility before a single line of code is written.
 
-Simultaneously, the UX designer shares low-fidelity wireframes for feedback on both the user experience and technical feasibility. Once we’re aligned, the designer creates high-fidelity mockups for the first few core user stories, getting us ready to hit the ground running on Monday.
+![alt text](image6.png)
+<p align=center><i>Mocks.</i></p>
+#### Finding a cadence: The Art of the Sprint
 
-![alt text](<Screenshot 2025-09-21 at 6.44.09 PM.png>)
-<p align=center><i>hi-fi mockup of an error flow </i></p>
-
-
-
-#### Finding a rhythm
-
-Come Monday of week two, the team is ready to start building. We kick off with a planning meeting where I teach the team how to estimate the sprint tasks for the week. While many teams were comfortable with story points, I'm always inclined to make sure everyone is on the same page about how we estimate work going forward and document it. After planning, team members are free to assign themselves tasks from the project board I’ve set up.
+With a prioritised backlog and designs in hand, Monday of week two marks our first sprint planning. I guide the team through estimating their tasks, emphasising that the goal isn't to enforce deadlines but to understand complexity and surface dependencies. Once the sprint is planned, team members self-assign tasks from the GitHub project board.
 
 ![alt text](image-2.png)
-<p align=center><i>The github project board I set up.</i></p>
+<p align=center><I>Discuss about about how much context is required for your team to start a task</i></p>
 
-Throughout the week, I hold one or two refinement sessions to clarify upcoming user stories and ensure they are ready for the next sprint. This is also my time to identify new features that would improve the user experience and get them into the backlog. At the end of the week, we hold a short review and retrospective to demo our work, share what went well, what went wrong, and what we could improve.
+To keep the engine running smoothly, I host one or two backlog refinement sessions during the week. In these working meetings, we clarify upcoming user stories, break down larger epics, and ensure the next sprint's work is ready to go. This is also where I feed new insights from ongoing user feedback into the backlog.
 
-To keep everyone on the same page, I aim to maintain a light Product Requirements Document (PRD) and create supporting artifacts like user personas and user flows as needed.
+We close out each week with a concise demo and retrospective. We celebrate what we shipped, discuss what went well, identify bottlenecks, and commit to one actionable improvement for the next sprint. This simple, repeatable rhythm builds momentum and creates a predictable cadence for the team to operate in.
 
 ![alt text](image-3.png)
-<p align=center><i>retros!</i></p>
+<p align=center><i>A retrospective without action is just a conversation.</i></p>
+
+#### Week 6: The Real MVP is the Team
 
 
-#### Why keep doing this? 
+![alt text](Image5.png)
+<p align=center><I>Goal!</i></p>
 
-My goal as a PM during every voyage is to experiment and learn. We only have six weeks to build an MVP, so we want to minimise process overhead and help people to collaborate as effectively as possible. It's important to always ask questions and learn as much as I can from the developers, UX researchers, and designers on the journey. It’s about discovering what works for them and adapting on the go.
+In the end, the Minimum Viable Product we ship is only half the story. The real outcome of a Chingu Voyage is the team itself, a group of individuals who learned to collaborate, challenge each other respectfully, and build something meaningful together. It’s a great reminder that the best products are built not by rigid processes and red tape, but by people who are empowered and motivated by a shared goal. That is why I keep coming back.
 
-In the end, it’s an incredibly enjoyable process. It’s a refreshing break from work to just get together with a motivated group of people, rally around an idea, and support each other in achieving our goals.
+
