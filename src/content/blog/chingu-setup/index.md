@@ -59,7 +59,7 @@ We close out each week with a concise demo and retrospective. We celebrate what 
 #### Week 6: The Real MVP is the Team
 
 
-![alt text](Image5.png)
+![alt text](image5.png)
 <p align=center><I>Goal!</i></p>
 
 In the end, the Minimum Viable Product we ship is only half the story. The real outcome of a Chingu Voyage is the team itself, a group of individuals who learned to collaborate, challenge each other respectfully, and build something meaningful together. It’s a great reminder that the best products are built not by rigid processes and red tape, but by people who are empowered and motivated by a shared goal. That is why I keep coming back.
