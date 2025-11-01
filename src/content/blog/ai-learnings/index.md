@@ -1,7 +1,7 @@
 ---
 title: “Field notes on building AI"
 description: “Just for context"
-date: “October 5 2025"
+date: “10/05/2025"
 ---
 
 ### Field notes on building AI
