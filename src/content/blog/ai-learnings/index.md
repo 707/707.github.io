@@ -1,10 +1,10 @@
 ---
-title: Field notes on building AI
+title: Field notes on building with AI
 description: "Just for context"
 date: "2025-10-19"
 ---
 
-Experimenting with AI in the last year felt like a game of trade-offs. Vibe-coding demos looked like magic, but shipping a feature that felt reliable and not like a coin toss required getting my hands dirty with the architecture. Here's notes from my experiments with popular AI use cases I've often come across.
+Experimenting with AI in the last year felt like a game of trade-offs. Vibe-coding demos looked like magic, but shipping a feature that felt reliable and not like a coin toss required getting my hands dirty with the architecture. Here's notes from my tinkering with AI use cases I've often come across.
 
 ### What I learned, fast
 

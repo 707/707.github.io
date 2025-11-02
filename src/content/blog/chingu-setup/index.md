@@ -5,19 +5,20 @@ date: "July 14 2025"
 ---
 
 
-> You can find my team’s [project documentation here](https://github.com/chingu-voyages/V57-tier3-team-32/releases/tag/v1.0.0). Feel free to use it as a reference for future voyages/projects.
+*You can find my team’s [project documentation here](https://github.com/chingu-voyages/V57-tier3-team-32/releases/tag/v1.0.0). Feel free to use it as a reference for future voyages/projects.*
 
-How do you take a bunch of strangers, scattered across the globe and turn them into a high-functioning team in just six weeks? This is the fundamental challenge of a [Chingu](https://www.chingu.io/) voyage, a 6 sprint 6 week spanning software development marathon. As a Product Manager who just completed my sixth voyage there, I've often rediscovered that success in this fast-paced, volunteer-driven environment isn't about rigid processes. It's about creating clarity, fostering ownership, and building momentum. I wanted to write this post to serve as a retrospective for myself and as a possible point of reference for those who are thinking about joining the next Chingu voyage.
 
-Over several voyages, I've refined an approach that hinges on a few core principles:
+How do you take a bunch of strangers scattered across the globe and turn them into a high-functioning team in just six weeks? This is the fundamental challenge of a [Chingu](https://www.chingu.io/) voyage, a 6 sprint 6 week spanning software development marathon. As a volunteer Product Manager who just completed my sixth voyage there, I wanted to write this post to serve as a retrospective for myself and as a potential reference for those who are thinking about joining the next Chingu voyage.
 
-    Clarity Over Control: My role is to ensure everyone understands the 'why' and the 'what' so they can own the 'how'.
+Over several voyages, I've discovered an approach that hinges on a few core principles:
 
-    Co-Create, Don't Dictate: Artifacts like a Working Agreement, the product idea, and the sprint plan are all built with the team, not for them. This is shared ownership.
+* Clarity over control: My role is to ensure everyone understands the 'why' and the 'what' so they can own the 'how'.
 
-    Momentum is the Goal: In a six week project, the biggest risk is stagnation. Our process must aim to be lightweight, remove blockers, and celebrate weekly progress to keep energy high.
+* Co-Create, don't dictate: Artifacts like a Working Agreement, the product idea, and the sprint plan are all built with the team, not for them. This is shared ownership.
 
-If that sounds too cookie cutter to you, here’s how I put these principles into practice.
+* Momentum is the goal: In a six week project, the biggest risk is stagnation. We need to be lightweight, remove blockers, and celebrate weekly progress to keep energy high.
+
+If this sounds too cookie cutter to you, here’s how I put these ideas into practice.
 
 #### Week 1: From strangers to a team
 
@@ -42,6 +43,7 @@ By the end of the first week, we had a validated problem statement. I translated
 
 ![alt text](image6.png)
 <p align=center><i>Mocks.</i></p>
+
 #### Finding a cadence: The Art of the Sprint
 
 With a prioritised backlog and designs in hand, Monday of week two marks our first sprint planning. I guide the team through estimating their tasks, emphasising that the goal isn't to enforce deadlines but to understand complexity and surface dependencies. Once the sprint is planned, team members self-assign tasks from the GitHub project board.
@@ -49,9 +51,9 @@ With a prioritised backlog and designs in hand, Monday of week two marks our fir
 ![alt text](image-2.png)
 <p align=center><I>Discuss about about how much context is required for your team to start a task</i></p>
 
-To keep the engine running smoothly, I host one or two backlog refinement sessions during the week. In these working meetings, we clarify upcoming user stories, break down larger epics, and ensure the next sprint's work is ready to go. This is also where I feed new insights from ongoing user feedback into the backlog.
+To keep the engine running smoothly, I host one or two backlog refinement sessions during the week. It was hard to find time in our busy schedules but we made do. In these working meetings, we clarify upcoming user stories, break down larger epics, and ensure the next sprint's work is ready to go. This is also where I feed new insights from ongoing user feedback into the backlog.
 
-We close out each week with a concise demo and retrospective. We celebrate what we shipped, discuss what went well, identify bottlenecks, and commit to one actionable improvement for the next sprint. This simple, repeatable rhythm builds momentum and creates a predictable cadence for the team to operate in.
+We then close out each week with a concise demo and retrospective. We celebrate what we shipped, discuss what went well, identify bottlenecks, and commit to one actionable improvement for the next sprint. This simple, repeatable rhythm builds momentum and creates a predictable cadence for the team to operate in.
 
 ![alt text](image-3.png)
 <p align=center><i>A retrospective without action is just a conversation.</i></p>
@@ -62,6 +64,6 @@ We close out each week with a concise demo and retrospective. We celebrate what 
 ![alt text](image5.png)
 <p align=center><I>Goal!</i></p>
 
-In the end, the Minimum Viable Product we ship is only half the story. The real outcome of a Chingu Voyage is the team itself, a group of individuals who learned to collaborate, challenge each other respectfully, and build something meaningful together. It’s a great reminder that the best products are built not by rigid processes and red tape, but by people who are empowered and motivated by a shared goal. That is why I keep coming back.
+In the end, the MVP we ship is only half the story. The real outcome of a Chingu Voyage is the team itself, a group of individuals who learned to collaborate, challenge each other respectfully, and build something meaningful together. It’s a good reminder that nice things are built not by rigid processes and red tape, but by people who are empowered and motivated by a shared goal. It’s so cliche but true and that's why I keep coming back.
 
 
