@@ -6,6 +6,8 @@ date: "2025-11-24"
 
 ### Klue
 
+> TLDR; Built a chrome app that is smart about highlighting *your* most relevant notes while you browse any website. Give Klue a try [on the Chrome Web Store](https://chromewebstore.google.com/detail/klue/cackjmmgcmnkjnffabkabapdkofggpjl). 
+
 I've been a power user for a lot of note-taking apps over the years. Joplin, Obsidian, Apple Notes, Notion, OneNote, OneTab, etc that honestly, I lost count. The pattern was always the same: save something that feels important, never see it again. Or stumble across it six months later with zero memory of why I saved it.
 
 What bothered me wasn't the apps themselves, they're all well-built. It was the moment of friction. I'm deep into a report about UK sub-prime markets, and somewhere in my brain there's a note about 2020 sub-primes I saved months ago. But to find it means stopping everything, opening the app, guessing which tag past-me used (was it some generic like #finance? maybe specific like #primes?), scrolling through pages of stuff. By the time I find it, the connection I was chasing is gone.
