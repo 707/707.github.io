@@ -212,11 +212,11 @@ Back to blog
 <h3 id="local-rag-stack">Local RAG Stack</h3>
 <p>To enable active surfacing of relevant notes based on context, we couldn’t simply send the current page and note contexts to an LLM on most user actions, it’s both computationally expensive and slow. The Deep Diver researcher also can’t send proprietary work to cloud LLM and Frontend Architect might be debugging internal code.</p>
 <p>I needed a Local-first zero API calls approach for embeddings to build the engine for semantic and contextual features. It should have privacy by architecture, not by promise. Your notes should never leave your machine unless you explicitly use chat (which hits OpenRouter).</p>
-<p><strong>Embedding and Clustering</strong>
-To generate sentence embeddings and tag clusters, I settled on the classic <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2">all-MiniLM-L6-v2</a> sentence transformer. It turns text into a numerical ‘fingerprint’ that represents its meaning. You can then use these fingerprints to group similar topics, find relevant information, or compare how alike two sentences are. On initial tests, larger models variants (768-dim) were more accurate but 4x bigger. Smaller models (128-dim) were faster but felt too imprecise for finding semantically similar notes. 384-dim hit the sweet spot.</p>
-<p><strong>Search</strong>
-For search, I tried a simple similarity search (raw cosine similarity), but it couldn’t keep up with 1,000+ notes. Then I looked into a heavy-duty tool called FAISS (via WASM), but it was just too bulky to load quickly in a browser. I discovered <a href="https://orama.com/">Orama</a>, which gave hybrid search (text + vector) with a tiny footprint and IndexedDB persistence out of the box which was perfect for the use case.</p>
-<p>I implemented a queue to proces one note at a time because initial versions let embedding requests run concurrently leading the chrome service worker crashing after indexing 50 notes. The queue processes slower, but is stable for a v1.</p>
+<p><strong>Embedding and Clustering</strong></p>
+<p>To generate sentence embeddings and tag clusters, I settled on the classic <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2">all-MiniLM-L6-v2</a> sentence transformer. It turns text into a numerical ‘fingerprint’ that represents its meaning. You can then use these fingerprints to group similar topics, find relevant information, or compare how alike two sentences are. On initial tests, larger models variants (768-dim) were more accurate but 4x bigger. Smaller models (128-dim) were faster but felt too imprecise for finding semantically similar notes. 384-dim hit the sweet spot.</p>
+<p><strong>Search</strong></p>
+<p>For search, I tried a simple similarity search (raw cosine similarity), but it couldn’t keep up with 1,000+ notes. Then I looked into a heavy-duty tool called FAISS (via WASM), but it was just too bulky to load quickly in a browser. I discovered <a href="https://orama.com/">Orama</a>, which gave hybrid search (text + vector) with a tiny footprint and IndexedDB persistence out of the box which was perfect for the use case.</p>
+<p>I implemented a queue to process one note at a time because initial versions let embedding requests run concurrently leading the chrome service worker crashing after indexing 50 notes. The queue processes slower, but is stable for a v1.</p>
 <p><strong>The Final stack:</strong></p>
 <ul>
 <li><strong>Transformers.js:</strong> Runs <code>Xenova/all-MiniLM-L6-v2</code> in the browser (384-dimensional embeddings, 25MB model)</li>
@@ -224,7 +224,6 @@ For search, I tried a simple similarity search (raw cosine similarity), but it c
 <li><strong>IndexedDB:</strong> Persistence layer (bypasses chrome.storage’s 5MB limit)</li>
 <li><strong>Service Worker:</strong> Sequential task queue to prevent memory spikes</li>
 </ul>
-<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="2500" height="3840" src="/_astro/m2.C_fKQp57_Z1RQ9bP.webp" ></p>
 <h3 id="ux-the-context-surfacing-problem">UX: The Context Surfacing Problem</h3>
 <p>While setting up the backend, I was also trying to address the core UX problem: How do users tell the app what context to use? Took a few tries to get this right.</p>
 <p><strong>Iteration 1: Context Pills</strong></p>
