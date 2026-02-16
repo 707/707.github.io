@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="Astro v5.15.3"><!-- Font preloads --><link rel="preload" href="/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://707.github.io/blog/klue/"><!-- Primary Meta Tags --><title>Building Klue | Nadeem S</title><meta name="title" content="Building Klue | Nadeem S"><meta name="description" content="Another AI note organisation app but this time it helps you think."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://707.github.io/blog/klue/"><meta property="og:title" content="Building Klue | Nadeem S"><meta property="og:description" content="Another AI note organisation app but this time it helps you think."><meta property="og:image" content="https://707.github.io/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://707.github.io/blog/klue/"><meta property="twitter:title" content="Building Klue | Nadeem S"><meta property="twitter:description" content="Another AI note organisation app but this time it helps you think."><meta property="twitter:image" content="https://707.github.io/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.elfUsALL.js"></script><script type="module">document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(o=>o.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-X0YSPW82N3"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X0YSPW82N3');
+</script><link rel="stylesheet" href="/_astro/_slug_.DtjEoxlP.css"></head> <!-- Google tag (gtag.js) --> <body> <header> <div class="mx-auto max-w-screen-sm px-5">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold"> Nadeem S </div>  </a> <nav class="flex gap-1"> <a href="/blog" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> 
+blog
+ </a> <!--
+        <span>
+          {`/`}
+        </span>
+         
+        <Link href="/work">
+          work
+        </Link>
+        
+        <span>
+          {`/`}
+        </span>
+
+        <Link href="/projects">
+          projects
+        </Link>
+
+        --> </nav> </div>  </div> </header> <main>  <div class="mx-auto max-w-screen-sm px-5">  <div class="animate"> <a href="/blog" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm"> 
+Back to blog
+ </div> </a> </div> <div class="space-y-1 my-10"> <div class="animate flex items-center gap-1.5"> <div class="font-base text-sm"> <time datetime="2025-11-24T00:00:00.000Z"> Nov 24, 2025 </time> </div>
+&bull;
+<div class="font-base text-sm"> 13 min read </div> </div> <div class="animate text-2xl font-semibold text-black dark:text-white"> Building Klue </div> </div> <article class="animate"> <h3 id="klue">Klue</h3>
+<p>I’ve been a power user for a lot of note-taking apps over the years. Joplin, Obsidian, Apple Notes, Notion, OneNote, OneTab, etc that honestly, I lost count. The pattern was always the same: save something that feels important, never see it again. Or stumble across it six months later with zero memory of why I saved it.</p>
+<p>What bothered me wasn’t the apps themselves, they’re all well-built. It was the moment of friction. I’m deep into a report about UK sub-prime markets, and somewhere in my brain there’s a note about 2020 sub-primes I saved months ago. But to find it means stopping everything, opening the app, guessing which tag past-me used (was it some generic like #finance? maybe specific like #primes?), scrolling through pages of stuff. By the time I find it, the connection I was chasing is gone.</p>
+<p>Lately I’d been reading about vector search making this kind of “meaning-based” retrieval actually feasible. <a href="https://huggingface.co/docs/transformers.js/en/index">Transformers.js</a> could run embedding models in the browser for years now. And LLMs don’t require a PhD to set up anymore with the carnival of APIs out there. I wanted to test if I could build something that just worked so I gave myself a weekend to find out.</p>
+<h2 id="breaking-down-the-problem">Breaking Down the Problem</h2>
+<p>Before writing any code, I tried figured out who actually has this problem and what everyone else is building. Turns out, a lot.</p>
+<p><strong>The Market Split</strong></p>
+<p>I spent a few days prior looking at what’s out there. The landscape basically splits two ways:</p>
+<p><strong>Storage-focused tools</strong> like Obsidian, Notion and Evernote let you build elaborate systems. You can customise everything, which is powerful, but I found myself spending more time organising than actually using my notes. Obsidian’s <a href="https://obsidian.md/clipper">web clipper</a> asks you to pick a vault, set template properties, add web page properties, all before you can save anything. It’s very flexible. Also very slow when you just want to clip something quick.</p>
+<p><strong>AI-native tools</strong> like <a href="https://readwise.io/">Readwise</a> get the synthesis part. Readwise’s AI integration is clever. You can chat with your articles. Popular tools also now auto-summarise YouTube videos. But everything routes through cloud LLMs, which makes sense for their model but felt uncomfortable for research notes or anything work-related. Your queries, your data, all going to OpenAI’s servers.</p>
+<p>The gap I saw: Everything treats clipping like a library. You go <em>to</em> the tool to find things. Nothing proactively surfaces “hey, you have 3 notes related to what you’re reading right now.” The intelligence is reactive, not ambient.</p>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="1014" height="424" src="/_astro/comp.DEnxzLij_1wn7l7.webp" ></p>
+<p><strong>The User Personas</strong></p>
+<p>I developed three archetypes, not for documentation but more like decision filters for myself that are based on my own workflows I recorded myself doing. Every time I was about to build something, I’d ask: does this actually help one of these people (or more or less state’s of me)?</p>
+<p><strong>1. Deep Diver Researcher</strong> – Academic or journalist working on long-form synthesis.
+<em>Pain:</em> Loses the source of quotes. Can’t find that one paragraph they swear they saved.
+<em>The test:</em> Can they write a synthesis paper citing 50 pages using only this extension?</p>
+<p><strong>2. Frontend Architect</strong> – Hobby programmer researching solutions to specific bugs or implementations.
+<em>Pain:</em> Saves code snippets with explanations, can’t find them three months later when hitting the same bug.
+<em>The test:</em> Can they solve problems from their own notes faster than re-Googling or asking AI?</p>
+<p><strong>3. Avid Hiker</strong> – Likes to build mood boards and reference hiking routes to plan for.
+<em>Pain:</em> Screenshots pile up in Downloads. Pinterest is too public. Text-only clippers don’t help.
+<em>The test:</em> Can they design an hiking trip itinerary using only the #hiking tag?</p>
+<p>These became the lens for every decision. Ghost tags (which we’ll cover later) shipped because the Deep Diver needed serendipity and the Hobby Programmer needed precision, it solved for both. Live context in chat shipped because all three personas needed to compose context dynamically without starting over.</p>
+<h2 id="the-setup">The Setup</h2>
+<p>I had a weekend to prototype so I structured my AI-Assisted workflows like a pod team, except the team was LLM agents with distinct roles:</p>
+<ul>
+<li><strong>Me (PM):</strong> Making product decisions, writing specs, filtering everything through the three personas</li>
+<li><strong><code>Gemini.MD</code> (Orchestrator and ‘Principal] Engineer’ agent):</strong> Reading Linear issues, exploring the codebase, writing technical specs to <code>.specs/NOT-XX.md</code>, reviewing code (with subagents), updating Linear issue status and with summaries</li>
+<li><strong><code>Claude.MD</code> (‘Senior Software Engineer’ agent):</strong> Reading specs, implementing with TDD, checking off boxes, committing code for review</li>
+<li><strong>Advisory skills:</strong> <code>Principal Designer</code> persona for UX critiques (influenced by opinionated design principles), ML <code>Principal Engineer</code> persona for ML architecture advice (production patterns). I’ve set up them up to debate and come up with recommendations together.</li>
+</ul>
+<p><strong>The Workflow:</strong></p>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="8081" height="410" src="/_astro/m1.ayWD3zhQ_Z1YGjBG.webp" ></p>
+<br>
+<p>I contemplated using one agent for everything initially but I would have to settle for reducing my chances of one-shotting features with okay architecture and okay code. Claude is token heavy when it thinks and writes code and quickly runs out of the 5-hour usage limits. Gemini has a large 1 million token context window which is useful for managing larger thinking tasks and has forgiving usage limits. For issue management, I relied on <a href="https://github.com/schpet/linear-cli">linear-cli</a> to manage Linear instead of using its own MCP which ironically consumed a lot of unnecessary tokens.</p>
+<h2 id="design-system">Design System</h2>
+<p>Before building anything, I needed to answer: what outcome do I need, what should this <em>feel</em> like for the user, how do I keep the momentum of browsing the web without being intrusive?</p>
+<p><strong>Design Philosophy:</strong></p>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="866" height="266" src="/_astro/linear.LIGvRZwT_ZU8uS6.webp" ></p>
+<p>I really liked Linear’s “intent driven” philosophy: users don’t “view lists,” they “act on intents.” So not “Bookmarks,” but “Read Later.” Not “Tags,” but “Research Stack.”</p>
+<p><strong>Why It Fit the Personas:</strong></p>
+<ul>
+<li><strong>Hobby Programmer:</strong> Keyboard shortcuts everywhere, compact UI, fast navigation</li>
+<li><strong>Deep Diver:</strong> Dense information display, clear visual hierarchy for scanning 50+ notes</li>
+<li><strong>Avid Hiker:</strong> Subtle animations, uninstrusive</li>
+</ul>
+<p>Everything shipped with full design tokens documented in <code>DESIGN_SYSTEM.md</code> which helped made the codebase maintainable.</p>
+<h2 id="solution-architecture">Solution Architecture</h2>
+<h3 id="the-ai-harness">The AI Harness</h3>
+<p>The personas needed some machine learning infra to help them answer “what connects these notes?”. I evaluated three options to address this.</p>
+<p><strong>Option 1: Gemini Nano (Local)</strong></p>
+<p>Stable Chrome now has a built-in on-device AI. It’s Privacy-first, near zero latency and completely offline after the first prompt. Sadly, it requires a minimum of 22GB storage, 16GB RAM, or 4GB VRAM GPU which my laptop barely met. The addressable market doesn’t have <a href="https://store.steampowered.com/hwsurvey/">these specs</a> and I can’t build for hardware most people don’t own.</p>
+<p><strong>Option 2: Google AI APIs (Early Preview)</strong></p>
+<p>Google’s <a href="https://developer.chrome.com/docs/ai/built-in-apis">preview AI APIs</a> (Prompt API, Summariser API, etc) looked promising and had better hardware requirements than Nano but the API surface changed weekly locking the extension into Google’s ecosystem with experimental APIs meant breaking changes every month.</p>
+<p><strong>Option 3: Provider Abstraction</strong></p>
+<p>Having a single provider also meant a single point of failure, managing context windows between providers would also require more hacky approaches so I built an abstraction layer instead (popularly called an AI harness today) with pluggable providers. And settled on with using OpenRouter’s <a href="https://">free model router</a> (stable, multi-model) for v1. This keeps the AI features free with a BYOKey feature and still kept the the door open for Gemini Nano when the ecosystem matures.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">class</span><span style="color:#B392F0"> AIHarness</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  async</span><span style="color:#B392F0"> initialize</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">providerName</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> 'openrouter'</span><span style="color:#E1E4E8">) { }</span></span>
+<span class="line"><span style="color:#F97583">  async</span><span style="color:#B392F0"> sendMessage</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">text</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">onChunk</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">onComplete</span><span style="color:#E1E4E8">) { }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Providers live in <code>ai-harness/providers/</code>:</p>
+<ul>
+<li><code>openrouter.js</code> (shipped in v1)</li>
+<li><code>gemini.js</code> (placeholder for when Nano matures)</li>
+<li><code>claude.js</code> (placeholder for future)</li>
+</ul>
+<p>Each provider normalises messages, handles streaming, implements fallback logic. The chat UI doesn’t know which provider it’s talking to.</p>
+<p><strong>The Payoff</strong></p>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="4062" height="3781" src="/_astro/m3.CW3eH1_R_29L0P3.webp" ></p>
+<p>In light of AI tooling rapidly maturing in 2025, I was itching to test out another production-grade infrastructure: eval frameworks (LLM-as-a-judge for response quality), token usage tracking, concept drift monitoring, orchestration for multi-step agentic loops. But had to keep it simple because observability is for scale. You need data to observe. V1 is about validating the core loop: Can users find old notes by vague memory? Does semantic search surface useful connections? Adding instrumentation before I know what to measure felt like premature optimisation.</p>
+<h3 id="local-rag-stack">Local RAG Stack</h3>
+<p>To enable active surfacing of relevant notes based on context, we couldn’t simply send the current page and note contexts to an LLM on most user actions, it’s both computationally expensive and slow. The Deep Diver researcher also can’t send proprietary work to cloud LLM and Frontend Architect might be debugging internal code.</p>
+<p>I needed a Local-first zero API calls approach for embeddings to build the engine for semantic and contextual features. It should have privacy by architecture, not by promise. Your notes should never leave your machine unless you explicitly use chat (which hits OpenRouter).</p>
+<p><strong>Embedding and Clustering</strong>
+To generate sentence embeddings and tag clusters, I settled on the classic <a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2">all-MiniLM-L6-v2</a> sentence transformer. It turns text into a numerical ‘fingerprint’ that represents its meaning. You can then use these fingerprints to group similar topics, find relevant information, or compare how alike two sentences are. On initial tests, larger models variants (768-dim) were more accurate but 4x bigger. Smaller models (128-dim) were faster but felt too imprecise for finding semantically similar notes. 384-dim hit the sweet spot.</p>
+<p><strong>Search</strong>
+For search, I tried a simple similarity search (raw cosine similarity), but it couldn’t keep up with 1,000+ notes. Then I looked into a heavy-duty tool called FAISS (via WASM), but it was just too bulky to load quickly in a browser. I discovered <a href="https://orama.com/">Orama</a>, which gave hybrid search (text + vector) with a tiny footprint and IndexedDB persistence out of the box which was perfect for the use case.</p>
+<p>I implemented a queue to proces one note at a time because initial versions let embedding requests run concurrently leading the chrome service worker crashing after indexing 50 notes. The queue processes slower, but is stable for a v1.</p>
+<p><strong>The Final stack:</strong></p>
+<ul>
+<li><strong>Transformers.js:</strong> Runs <code>Xenova/all-MiniLM-L6-v2</code> in the browser (384-dimensional embeddings, 25MB model)</li>
+<li><strong>Orama:</strong> In-memory vector database with hybrid search (keyword + semantic)</li>
+<li><strong>IndexedDB:</strong> Persistence layer (bypasses chrome.storage’s 5MB limit)</li>
+<li><strong>Service Worker:</strong> Sequential task queue to prevent memory spikes</li>
+</ul>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="2500" height="3840" src="/_astro/m2.C_fKQp57_Z1RQ9bP.webp" ></p>
+<h3 id="ux-the-context-surfacing-problem">UX: The Context Surfacing Problem</h3>
+<p>While setting up the backend, I was also trying to address the core UX problem: How do users tell the app what context to use? Took a few tries to get this right.</p>
+<p><strong>Iteration 1: Context Pills</strong></p>
+<p>First attempt had fragmented context management. Header pill showed “Related Notes,” dropdown hiding Tag filters, chat having no explicit context control. Users couldn’t compose specific context like “analyse <em>This Page</em> + <em>#research</em> notes.”</p>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="752" height="348" src="/_astro/contextpill.C3aK2VRw_Zn1mNu.webp" ></p>
+<p>Context is a state, not decoration. I needed to show it structurally, not visually. Seeing context as decorative chips scattered around wasn’t helping users understand what was “in scope.”</p>
+<p><strong>Iteration 2: Stack Unification</strong></p>
+<p>I killed the header pill and moved everything into “Stack” chips, a single source of truth for context. I used semantic search for suggestion pills instead. When viewing a page with no saved notes, we extract the page’s title and text, generate embeddings, query vector DB for similar notes and then pull <em>their</em> tags.</p>
+<p>The strategy:</p>
+<ul>
+<li>Stack = one state driving both Library filtering AND chat context</li>
+<li>Chips for everything: “This Page,” <code>#tags</code>, “Starred,” “Read Later”</li>
+<li>AND logic: Stack filters + Search</li>
+<li>Live context: Changing filters updates the next chat message, doesn’t reset the conversation</li>
+</ul>
+<p>Users today treat classic chat UIs as a workspace. They want to bring new tools into the conversation, not start over. It felt right when I tested it. Changing a filter mid-conversation should refine what you’re asking about, not throw away the whole thread.</p>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="680" height="72" src="/_astro/stack.DlzvjmjX_Zhzeo1.webp" ></p>
+<p><strong>Iteration 3: Stack Context Bar</strong></p>
+<p>I refined the stack with a fixed ‘This Page’ button, a new pop up context menu for more filters and sorting and a scrollable horizontal bar. The tags appear as light grey chips in the Stack. Click one, becomes an active filter, surfaces the related notes you forgot you had. The idea is also applied to search. If Stack is active and search returns nothing, we show a helper: <em>“Searching in context. Search all notes?”</em> One click clears Stack filters but keeps the search term.</p>
+<p>The stack appears in both Library view and Chat view with the same state in both locations. Toggle a tag in Library, it instantly appears in Chat. Toggle “This Page” in Chat, Library filters immediately.</p>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="736" height="94" src="/_astro/contextbar.BeRJjA9U_2sMddS.webp" ></p>
+<h2 id="what-shipped">What Shipped</h2>
+<p>Shipped v1.0.0 to <a href="https://chromewebstore.google.com/detail/klue/cackjmmgcmnkjnffabkabapdkofggpjl?authuser=0&#x26;hl=en">Chrome Web Store</a> over the weekend.</p>
+<p><strong>Core Features:</strong></p>
+<ul>
+<li>Chrome side panel with Library + Chat views</li>
+<li>Semantic search: vector embeddings, hybrid with keyword search via Orama</li>
+<li>Basic Note creation and editing tools</li>
+<li>AI chat with smart context injection (Stack filters + “This Page” content)</li>
+<li>Smart metadata extraction (title, description, auto-tags from content)</li>
+<li>Ghost tags (semantic suggestions from similar notes)</li>
+<li>Linear-inspired design system (color tokens, spacing scales, full motion system)</li>
+<li>Privacy-first architecture (local embeddings, only chat hits OpenRouter)</li>
+</ul>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="2466" height="1178" src="/_astro/final.Bl276SYZ_Z24qYGb.webp" ></p>
+<p><img alt="title" loading="lazy" decoding="async" fetchpriority="auto" width="2510" height="1112" src="/_astro/final2.BNZXsqkJ_Z1mme6G.webp" ></p>
+<br>
+<p><strong>Is it perfect?</strong> No. The image handling is basic (saves them, but no gallery view yet). The “This Page” filter sometimes gets confused on sites with complex edge case URL parameters. Ghost tags occasionally suggest connections that make zero sense and require fine tuning. But the core loop works: I can find that 2020 sub-primes note by typing “loans” into search. That’s the thing I needed to work.</p>
+<p><strong>The Tests:</strong></p>
+<p>Deep Diver: Can cite old notes without remembering exact keywords. ✓</p>
+<p>Hobby Programer Architect: Solves problems from personal solution library faster than re-Googling. ✓</p>
+<p>Avid Hiker: Images and meta data save, but no gallery view and limited use of metadata. Partial. Maybe v1.1.</p>
+<p>I’ve been using it daily since shipping. That’s the real test for me.</p>
+<h2 id="whats-next">What’s next?</h2>
+<p>A product shipped doesn’t mean product launched. I still want to convince people to try this and bring their challenges. There’s more feedback to be captured from real users and testing to refine the experience. The first three personas were educated guesses. Now I’ll have actual data.</p>
+<p>If you found what I’m trying to build interesting, give Klue a try <a href="https://chromewebstore.google.com/detail/klue/cackjmmgcmnkjnffabkabapdkofggpjl">on the Chrome Web Store</a>.</p> </article>  </div>  </main> <footer class="animate"> <div class="mx-auto max-w-screen-sm px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2025 | Nadeem S </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>
