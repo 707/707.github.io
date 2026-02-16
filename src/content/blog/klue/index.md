@@ -130,12 +130,14 @@ I needed a Local-first zero API calls approach for embeddings to build the engin
 
 
 **Embedding and Clustering**
+
 To generate sentence embeddings and tag clusters, I settled on the classic [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) sentence transformer. It turns text into a numerical 'fingerprint' that represents its meaning. You can then use these fingerprints to group similar topics, find relevant information, or compare how alike two sentences are. On initial tests, larger models variants (768-dim) were more accurate but 4x bigger. Smaller models (128-dim) were faster but felt too imprecise for finding semantically similar notes. 384-dim hit the sweet spot.
 
 **Search**
+
 For search, I tried a simple similarity search (raw cosine similarity), but it couldn't keep up with 1,000+ notes. Then I looked into a heavy-duty tool called FAISS (via WASM), but it was just too bulky to load quickly in a browser. I discovered [Orama](https://orama.com/), which gave hybrid search (text + vector) with a tiny footprint and IndexedDB persistence out of the box which was perfect for the use case.
 
-I implemented a queue to proces one note at a time because initial versions let embedding requests run concurrently leading the chrome service worker crashing after indexing 50 notes. The queue processes slower, but is stable for a v1.
+I implemented a queue to process one note at a time because initial versions let embedding requests run concurrently leading the chrome service worker crashing after indexing 50 notes. The queue processes slower, but is stable for a v1.
 
 **The Final stack:**
 
@@ -143,8 +145,6 @@ I implemented a queue to proces one note at a time because initial versions let 
 - **Orama:** In-memory vector database with hybrid search (keyword + semantic)
 - **IndexedDB:** Persistence layer (bypasses chrome.storage's 5MB limit)
 - **Service Worker:** Sequential task queue to prevent memory spikes
-
-![title](m2.png)
 
 ### UX: The Context Surfacing Problem
 
